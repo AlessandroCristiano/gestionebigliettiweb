@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="it" class="h-100" >
 	 <head>
-	 
+	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	 	<!-- Common imports in pages -->
 	 	<jsp:include page="./header.jsp" />
 		<!-- Custom styles per le features di bootstrap 'Columns with icons' -->
@@ -63,7 +63,7 @@
 			    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
 			      <div class="feature col">
 			        <div class="feature-icon bg-gradient" style="background-color: #00cc00;">
-			          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+			          <i class="bi bi-list"></i>
 			        </div>
 			        <h2>Lista Elementi</h2>
 			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
@@ -74,7 +74,7 @@
 			      </div>
 			      <div class="feature col">
 			        <div class="feature-icon bg-gradient" style="background-color: #00cc00;">
-			          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
+			      <i class="bi bi-plus-circle"></i>
 			        </div>
 			        <h2>Inserisci Nuovo</h2>
 			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
@@ -85,7 +85,7 @@
 			      </div>
 			      <div class="feature col">
 			        <div class="feature-icon bg-gradient" style="background-color: #00cc00;">
-			          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+			          <i class="bi bi-search"></i>
 			        </div>
 			        <h2>Cerca Elemento</h2>
 			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
