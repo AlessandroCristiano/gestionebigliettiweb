@@ -42,7 +42,7 @@
 				        <h5>Lista dei risultati</h5> 
 				    </div>
 				    <div class='card-body'>
-				    	<a class="btn btn-primary " href="PrepareInsertBigliettoServlet">Add New</a>
+				    	<a class="btn" style="background-color: #00cc00;" href="PrepareInsertBigliettoServlet">Add New</a>
 				    
 				        <div class='table-responsive'>
 				            <table class='table table-striped ' >
@@ -67,7 +67,7 @@
 				                        <td><%=item.getPrezzo() %></td>
 				                        <td>
 											<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaBigliettoServlet?idBiglietto=<%=item.getId() %>">Visualizza</a>
-											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateBigliettoService?idBiglietto=<%=item.getId() %>">Edit</a>
+											<a class="btn  btn-sm btn-outline-success ml-2 mr-2" href="PrepareUpdateBigliettoService?idBiglietto=<%=item.getId() %>">Edit</a>
 											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteBigliettoService?idBiglietto=<%=item.getId() %>">Delete</a>
 										</td>
 				                    </tr>
