@@ -2,6 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="it.prova.gestionebigliettiweb.model.Biglietto"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,28 +27,25 @@
 				<div class='card-header'>
 					<h5>Visualizza dettaglio</h5>
 				</div>
-				<% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("bigliettoDaInviareAPaginaDelete"); %>
-
-
 					    <div class='card-body'>
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Provenienza</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getProvenienza() %></dd>
+							  <dd class="col-sm-9">${bigliettoDaInviareAPaginaDelete.provenienza}</dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Destinazione:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getDestinazione() %></dd>
+							  <dd class="col-sm-9">${bigliettoDaInviareAPaginaDelete.destinazione}</dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Data:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getData()!=null? new SimpleDateFormat("dd/MM/yyyy").format(bigliettoInPagina.getData()):"N.D."  %></dd>
+							  <dd class="col-sm-9"><fmt:formatDate pattern="dd-MM-yyyy" value="${bigliettoDaInviareAPaginaDelete.data}"/></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Prezzo:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getPrezzo() %></dd>
+							  <dd class="col-sm-9">${bigliettoDaInviareAPaginaDelete.prezzo}</dd>
 					    	</dl>
 					    	
 					    </div>
@@ -55,7 +54,7 @@
 				
 					<form action="ExecuteDeleteBigliettiServlet" method="post">
 						<button type="submit" name="submit" value="submit" id="submit" class="btn" style="background-color: #00cc00;">Conferma</button>
-						<input type="hidden" name="idBiglietto" value="<%=bigliettoInPagina.getId()%>">
+						<input type="hidden" name="idBiglietto" value="${bigliettoDaInviareAPaginaDelete.id}">
 						<a href="ListBigliettiServlet" class='btn btn-outline-secondary' style='width: 80px'> 
 							<i class='fa fa-chevron-left'></i> Back
 						</a>

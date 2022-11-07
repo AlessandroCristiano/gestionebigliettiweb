@@ -1,7 +1,7 @@
 <header>
   <!-- Fixed navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00ff00;" aria-label="Eighth navbar example">
-   <a class="navbar-brand">
+   <a class="navbar-brand" href="index.jsp">
     <img src="https://png2.cleanpng.com/sh/0f11ad7a46607e323069d1f52a0b2440/L0KzQYm3VsA2N6Z2kZH0aYP2gLBuTgRzaZpzReRqaXywhMPojwNxd6N5ReRqcHnnPcX5gf50caUye9H2cIX3dcO0ifNwdqQyjORqaX6wg7rujr02amI7UdRtOXS8RLftWL41QGc2T6U5M0G4Qom5UMg0PGY9UaI6LoDxd1==/kisspng-train-rail-transport-rapid-transit-computer-icons-train-sign-5b169bd9d94ff8.4861730315282083458901.png" width="40" height="40" alt="">
   </a>
     <div class="container">

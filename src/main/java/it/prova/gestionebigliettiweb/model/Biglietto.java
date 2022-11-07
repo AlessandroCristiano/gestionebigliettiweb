@@ -31,6 +31,7 @@ public class Biglietto {
 	private Integer prezzo;
 
 	@CreationTimestamp
+	@Column(updatable = false)
 	private LocalDateTime createDateTime;
 	@UpdateTimestamp
 	private LocalDateTime updateDateTime;

@@ -23,26 +23,7 @@ public class UtilityBigliettoForm {
 		result.setData(parseDateArrivoFromString(dataInputParam));
 
 		return result;
-	}
-	
-	public static Biglietto createBigliettoFromParamsWithId(String id, String provenienzaInputParam, String destinazioneInputParam,
-				String dataInputParam, String prezzoInputStringParam) {
-			
-			Biglietto result = new Biglietto(provenienzaInputParam, destinazioneInputParam);
-			
-			if (NumberUtils.isCreatable(id)) {
-				result.setId(Long.parseLong(id));
-			}
-			
-			if (NumberUtils.isCreatable(prezzoInputStringParam)) {
-				result.setPrezzo(Integer.parseInt(prezzoInputStringParam));
-			}
-			result.setData(parseDateArrivoFromString(dataInputParam));
-
-			return result;
-		
-	}
-	
+	}	
 	
 	
 	public static boolean validateBigliettoBean(Biglietto bigliettoToBeValidated) {

@@ -36,7 +36,7 @@ public class ExecuteInsertBigliettoServlet extends HttpServlet {
 		// se la validazione non risulta ok
 		if (!UtilityBigliettoForm.validateBigliettoBean(bigliettoInstance)) {
 			request.setAttribute("insert_biglietto_attr", bigliettoInstance);
-			request.setAttribute("errorMessage", "Attenzione sono presenti errori di validazione");
+			request.setAttribute("errorMessage", "Attenzione sono presenti valori nulli");
 			request.getRequestDispatcher("/biglietto/insert.jsp").forward(request, response);
 			return;
 		}
