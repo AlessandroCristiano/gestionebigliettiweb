@@ -55,7 +55,7 @@
 					<form action="ExecuteDeleteBigliettiServlet" method="post">
 						<button type="submit" name="submit" value="submit" id="submit" class="btn" style="background-color: #00cc00;">Conferma</button>
 						<input type="hidden" name="idBiglietto" value="${bigliettoDaInviareAPaginaDelete.id}">
-						<a href="ListBigliettiServlet" class='btn btn-outline-secondary' style='width: 80px'> 
+						<a href="${pageContext.request.contextPath }/ListBigliettiServlet" class='btn btn-outline-secondary' style='width: 80px'> 
 							<i class='fa fa-chevron-left'></i> Back
 						</a>
 					</form>

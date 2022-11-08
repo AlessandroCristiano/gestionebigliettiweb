@@ -44,8 +44,11 @@
 				        <h5>Lista dei risultati</h5> 
 				    </div>
 				    <div class='card-body'>
-				    	<a class="btn" style="background-color: #00cc00;" href="PrepareInsertBigliettoServlet">Add New</a>
-				    
+				    	<c:forEach items="${userInfo.ruoli}" var="element">
+			      			<c:if test="${element.codice == 'ADMIN_ROLE'}">	
+				    	<a class="btn" style="background-color: #00cc00;" href="${pageContext.request.contextPath }/admin/PrepareInsertBigliettoServlet">Add New</a>
+				    	</c:if>
+			      			</c:forEach>
 				        <div class='table-responsive'>
 				            <table class='table table-striped ' >
 				                <thead>
@@ -68,9 +71,13 @@
 				                        <td>${item.prezzo}</td>
 				                        <td>
 											<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaBigliettoServlet?idBiglietto=${item.id}">Visualizza</a>
-											<a class="btn  btn-sm btn-outline-success ml-2 mr-2" href="PrepareUpdateBigliettoService?idBiglietto=${item.id}">Edit</a>
-											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteBigliettoService?idBiglietto=${item.id}">Delete</a>
-										</td>
+										<c:forEach items="${userInfo.ruoli}" var="elemento">
+			      							<c:if test="${elemento.codice == 'ADMIN_ROLE'}">	
+												<a class="btn  btn-sm btn-outline-success ml-2 mr-2" href="${pageContext.request.contextPath }/admin/PrepareUpdateBigliettoService?idBiglietto=${item.id}">Edit</a>
+												<a class="btn btn-outline-danger btn-sm" href="${pageContext.request.contextPath }/admin/PrepareDeleteBigliettoService?idBiglietto=${item.id}">Delete</a>
+											</c:if>
+			      						</c:forEach>
+			      						</td>
 				                    </tr>
 				                    </c:forEach>
 				                    

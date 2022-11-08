@@ -1,4 +1,6 @@
 <!doctype html>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="it" class="h-100" >
 	 <head>
 	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -52,7 +54,7 @@
 				      <div class="container-fluid py-5">
 				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietti</h1>
 				        <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. </p>
-				        <a class="btn btn-lg" style="background-color: #00cc00;" href="ListBigliettiServlet">Lista Elementi</a>
+				        <a class="btn btn-lg" style="background-color: #00cc00;" href="${pageContext.request.contextPath }/ListBigliettiServlet">Lista Elementi</a>
 				      </div>
 			    </div>
 			    
@@ -67,29 +69,35 @@
 			        </div>
 			        <h2>Lista Elementi</h2>
 			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-			        <a href="ListBigliettiServlet" class="icon-link">
+			        <a href="${pageContext.request.contextPath }/ListBigliettiServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
+			      
+			      <c:forEach items="${userInfo.ruoli}" var="item">
+			      <c:if test="${item.codice == 'ADMIN_ROLE'}">
 			      <div class="feature col">
 			        <div class="feature-icon bg-gradient" style="background-color: #00cc00;">
 			      <i class="bi bi-plus-circle"></i>
 			        </div>
 			        <h2>Inserisci Nuovo</h2>
 			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
+			        <a href="${pageContext.request.contextPath }/admin/PrepareInsertBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
+			      </c:if>
+			      </c:forEach>
+			      
 			      <div class="feature col">
 			        <div class="feature-icon bg-gradient" style="background-color: #00cc00;">
 			          <i class="bi bi-search"></i>
 			        </div>
 			        <h2>Cerca Elemento</h2>
 			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-			        <a href="PrepareSearchBigliettoServlet" class="icon-link">
+			        <a href="${pageContext.request.contextPath }/PrepareSearchBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>

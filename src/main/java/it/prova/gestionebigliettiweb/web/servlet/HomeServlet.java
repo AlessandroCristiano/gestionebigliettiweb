@@ -7,20 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.prova.gestionebigliettiweb.model.Biglietto;
-
-/**
- * Servlet implementation class PrepareInsertBigliettoServlet
- */
-@WebServlet("/admin/PrepareInsertBigliettoServlet")
-public class PrepareInsertBigliettoServlet extends HttpServlet {
+@WebServlet("")
+public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//metto un bean 'vuoto' in request perché per la pagina risulta necessario
-				request.setAttribute("insert_biglietto_attr", new Biglietto());
-				request.getRequestDispatcher("/biglietto/insert.jsp").forward(request, response);
+		//questa servlet risulta utile quando ho qualcosa (una lista, un oggetto) che va preparato prima di mostrare la pagina che segue
+		request.getRequestDispatcher("/biglietto/login.jsp").forward(request, response);
 	}
-
 
 }
